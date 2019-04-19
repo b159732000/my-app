@@ -1,0 +1,173 @@
+body {
+    height: 100vh;
+    /* width: 100vh; */
+    /* border: solid 5px black; */
+}
+
+#mainContent {
+    /* 設定背景 */
+    background: url(../images/indexBg.png);
+    background-repeat: no-repeat;
+    /* 背景拉伸填滿視窗 */
+    background-size: cover;
+
+    /* 為了讓overflow起作用，必須用Position將此層設為參考點 */
+    position: relative;
+    overflow: hidden;
+
+    /* 使這層符合視窗大小 */
+    height: 100%;
+}
+
+/* 首頁目錄 */
+.choiceContent {
+
+    /* 參考http://zh-tw.learnlayout.com/position.html */
+    position: relative;
+
+    /* 為了讓水平/垂直置中起作用 */
+    display: flex;
+
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+
+    /* 內容水平置中 */
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    /* border: solid 5px black; */
+    top: 10vh;
+    height: 40vh;
+}
+
+.topChoice {
+    /* border: solid 5px orange; */
+    position: relative;
+
+
+    /* 為了讓水平/垂直置中起作用 */
+    display: flex;
+
+    /* 垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+
+    /* 水平置中 */
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 40vh;
+}
+
+.topChoice .choiceList {
+    width: 100%;
+}
+
+.topChoice .choiceList .column {
+    padding: 2vh 0;
+    width: 100%;
+
+    /* 為了讓水平/垂直置中起作用 */
+    display: flex;
+
+    /* 垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+
+    /* 水平置中 */
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.topChoice .choiceList li {
+    /* border: solid red 1px; */
+
+    position: relative;
+    display: inline;
+
+    width: 100%;
+
+    /* 設定讓內容上下左右置中 */
+    /* 為了讓水平/垂直置中起作用 */
+    display: flex;
+    /* 垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 水平置中 */
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    padding: 2vh 1vh;
+
+    clear: both;
+}
+
+.topChoice .choiceList li a {
+    
+    /* 設定block是為了撐起父Div */
+    display: block;
+
+    /* 此連結寬度=父Div的幾趴 */
+    width: 100%;
+}
+
+.topChoice .choiceList li img {
+
+    /* 為了圖片置中，因為上層回連結(a)，連結不能用flex */
+    margin: auto;
+
+    /* 設定block是為了撐起父Div */
+    display: block;
+
+    /* 圖片寬度=父Div的幾趴 */
+    width: 50%;
+}
+
+
+
+/* 首頁底部的圖片及文字 */
+.homepageFooter {
+    /* border: 5px solid black; */
+
+    /* 為了讓Top...等等 起作用 */
+    position: absolute;
+
+    top: 55vh;
+    
+    width: 100%;
+}
+
+.homepageFooter .img img {
+    width: 100%;
+}
+
+.homepageFooter .wordImg {
+
+    /* 1. 讓這個東西的定位以父元素為座標基準
+    2.為了讓Top...等方法起作用 */
+    position: absolute;
+
+    z-index: 1;
+    top: 17vh;
+    left: 2vw;
+
+    width: 70vh;
+}
+
+.homepageFooter .wordImg img {
+    width: 60%;
+}
+
+
+
+/* loadingHtml */
+.loadingHtml {
+    position: absolute;
+
+    z-index: 101;
+
+    height: 100vh;
+    width: 100vw;
+}
