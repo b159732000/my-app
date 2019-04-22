@@ -11,7 +11,8 @@ class MainLoadingPage extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
+      
         <div id="mainLoadingPage" style={{height: '100vh', backgroundImage: 'url(' + require('../../images/loadingBg.jpg') + ')', }}>
           <div className="companyLogo"
             style={{width: '8rem', height: '1.5rem', position: 'absolute',	top:'22%',left: '50%',marginLeft: '-4rem', background: "url(" + require('../../images/txt.png') + ") no-repeat center",backgroundSize:'100% 100%'}}>
@@ -26,4 +27,4 @@ class MainLoadingPage extends React.Component {
   }
 }
 
-export default MainLoadingPage;
+export {MainLoadingPage};

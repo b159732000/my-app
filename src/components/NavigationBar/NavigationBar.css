@@ -1,0 +1,68 @@
+#NavigationBarContainer {
+  height: 9vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #000;
+}
+
+/* 對外層的關係 */
+
+/* 底部導行列 */
+#NavigationBarContainer .mainNav {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  bottom: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+#NavigationBarContainer .mainNavUl {
+  background: url(../../images/bottomChoice.png);
+
+  height: 100%;
+  position: relative;
+
+  /* 為了讓水平/垂直置中起作用 */
+  display: flex;
+  /* 內容垂直置中 */
+  -webkit-align-items: center;
+  align-items: center;
+  /* 內容水平置中 */
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+}
+
+#NavigationBarContainer .mainNavUl li {
+  padding: 2vw;
+
+  position: relative;
+
+  /* 為了讓水平/垂直置中起作用 */
+  display: flex;
+  /* 內容垂直置中 */
+  -webkit-align-items: center;
+  align-items: center;
+
+  /* 內容水平置中 */
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#NavigationBarContainer .navSelected {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  background: url(../../images/bcActive.png);
+}
+
+#NavigationBarContainer .mainNavUl li a img {
+  margin: auto;
+
+  width: 95%;
+}

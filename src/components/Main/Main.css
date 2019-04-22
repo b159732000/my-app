@@ -1,0 +1,17 @@
+#BrowserRouterContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#MainContainer {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#MainContainerRouterItem {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
