@@ -2,6 +2,7 @@ import React from 'react';
 
 import "./Qwzs.css"
 
+import Iframe from 'react-iframe'
 
 class Qwzs extends React.Component {
     constructor(props) {
@@ -15,7 +16,9 @@ class Qwzs extends React.Component {
         }
     }
 
-    // 切換全景顯示狀態
+
+
+    // 切換右側標籤頁
     changeActiveTab = (selectedButton) => {
 
         // 隱藏所有頁面
@@ -31,7 +34,6 @@ class Qwzs extends React.Component {
         switch (selectedButton) {
             case "fourLakes":
             this.setState({showFourLakes: ""});
-            console.log("success");
             break;
             case "traffic":
             this.setState({showTraffic: ""});
@@ -48,7 +50,29 @@ class Qwzs extends React.Component {
             default:
             break;
         }
+    }
 
+
+
+    // 增加/刪除 Panorama Url
+    panoramaUrl = () => {
+        if (this.state.showQj == "") {
+            return "http://hvr.isunupcg.com/james/cuihu-optimize/qj/39/pano/index.html";
+        } else {
+            return null;
+        }
+    }
+
+
+    closePanorama = () => {
+        this.setState({
+            showFourLakes: "hidden",
+            showTraffic: "hidden",
+            showTjw: "hidden",
+            showXmpt: "",
+            showQj: "hidden",
+        })
+        console.log("success");
     }
 
     render() {
@@ -132,11 +156,13 @@ class Qwzs extends React.Component {
                     </div>
 
                     {/*  全景和返回鍵  */}
-                    <div className="qj">
-                        <div id="getBack" className="getBack" style={{ display: "none" }}>
-                            <a onClick="closePanomera()"></a>
+                    <div className={"qj" + " " + this.state.showQj}>
+
+                        <div id="getBack" className="getBack">
+                            <a onClick={this.closePanorama}></a>
                         </div>
-                        <iframe id="panomera" src="./qj/39/pano/index.html" frameborder="0" style={{ display: "none" }}></iframe>
+                        <Iframe id="panomera" url={this.panoramaUrl()} frameborder="0"></Iframe>
+                        {/*<iframe id="panomera" src={require("../../qj/39/pano/index.html")} frameborder="0"></iframe>*/}
                     </div>
 
 

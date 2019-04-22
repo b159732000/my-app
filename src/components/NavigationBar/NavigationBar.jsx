@@ -17,9 +17,9 @@ class NavigationBar extends React.Component {
                     <nav className="mainNav">
                         <ul className="mainNavUl">
                             <li id="buttonToXmjs"><a href="./xmjs.html" target="_top"><img src={require("../../images/xmjs.png")} alt="" /></a></li>
-                            <li id="buttonToQwzs"><Link to="/Qwzs" target="_top"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
+                            <li id="buttonToQwzs"><Link to="/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
                             <li id="buttonToJghx"><a href="./jghx.html" target="_top"><img src={require("../../images/jghx.png")} alt="" /></a></li>
-                            <li id="buttonToJgzx"><Link to="/Jgzx" target="_top"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
+                            <li id="buttonToJgzx"><Link to="/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
                         </ul>
                     </nav>
 

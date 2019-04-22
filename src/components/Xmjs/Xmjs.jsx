@@ -14,9 +14,6 @@ class Xmjs extends React.Component {
                 {/*<iframe id="childLoadingPage" name="childLoadingPage" className="" src="./childLoadingPage.html"
         frameborder="0"></iframe>*/}
 
-                {/* 底部導行列 */}
-                {/*<iframe id="mainNav" src="./navigation.html" frameborder="0"></iframe>
-
                 {/* Swiper */}
                 <div className="swiper-container hidden">
                     <div className="swiper-wrapper">
@@ -72,20 +69,6 @@ class Xmjs extends React.Component {
             });
     </script>*/}
 
-
-                {/* 載入頁 */}
-                {/*<script>
-                    function pageIsLoad() {
-                        document.childLoadingPage.childLoadingIsDone = true;
-                    }
-                    setTimeout(pageIsLoad, 5000);
-        setInterval(function () {
-            if (document.childLoadingPage.childLoadingIsDone) {
-                        document.getElementById("childLoadingPage").classList.add("hidden");
-                    document.getElementsByClassName("swiper-container")[0].classList.remove("hidden");
-                }
-            }, 500);
-    </script>*/}
 
 
             </div>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 此XML代码由花花生活网络全景平台自动生成
+       全景云平台购买咨询QQ：1791262697 -->
+<krpano showerrors="false" onstart="action(start);action(fixfov);"  idletime="20">
+ <group_id name="group_id" >
+   
+</group_id>	
+
+     <include url="%SWFPATH%/base.xml" />
+	<include url="%SWFPATH%/plugins/showtext.xml" />
+    
+    <action name="start">
+        loadscene(scene1, null, MERGE);
+        		if(autorotate.enabled == true ,bombtimer(0););
+		    </action>
+
+	<plugin name="soundinterface"
+        url="%SWFPATH%/plugins/soundinterface.swf"
+        alturl="%SWFPATH%/plugins/soundinterface.js"
+	rootpath="" preload="true" keep="true" loops="1" />
+
+    
+    
+        <autorotate enabled="false" />
+    	<include url="%SWFPATH%/krpanocms.xml?1537439211" />
+	<include url="%SWFPATH%/gundongzimu.xml?1537439211" />
+	<include url="%SWFPATH%/cms_config.xml?1537439211" />
+	<include url="%SWFPATH%/html.xml?1537439211" />
+		<include url="%SWFPATH%/video-player.xml?1537439211" />
+
+<events onclick="screentosphere(mouse.x,mouse.y,h,v);trace(h);" />
+<events onxmlcomplete="set(control.mousetype, moveto);" />
+<skin_settings loading="场景在努力加载中" openautonext="0" thumbs_width="90" thumbs_height="90" thumbs_padding="10" thumbs_crop="" krpanocms="true" domainlink="http://47.92.143.207" groupid="1" webvr="true" bgmusic="false" bgyunyin="false" erweima="false" opennews="false" news="" opentel="false" tel="openurl('tel://',_blank)" openhttp="false" http="openurl('',_blank )" opendaohang="false" daohang="openurl('http://apis.map.qq.com/uri/v1/geocoder?coord=',_blank )" opencard="false" ope_bdmap="" bd_map="" openzan="false" pano_id="69"></skin_settings>
+<lensflareset name="DEFAULT" url="%SWFPATH%/lensflare/flares.jpg"/>
+
+
+
+
+
+
+
+<layer name="Iframe_close" keep="true" url="" align="righttop" edge="righttop" width="25" height="25" x="8" y="8" onclick="closeIframe()" zorder="1" visible="false" />
+<action name="Iframe_bg">
+if(layer[openIframe_bg],'',
+	<!-- step one - add a background layer and fade it in -->
+	set(layer[Iframe_close].visible, true);
+	addlayer(openIframe_bg);
+	set(layer[openIframe_bg].type, container);
+	set(layer[openIframe_bg].zindex, 999999);
+	set(layer[openIframe_bg].align, lefttop);
+	set(layer[openIframe_bg].width, 100%);
+	set(layer[openIframe_bg].height, 100%);
+	set(layer[openIframe_bg].bgcolor, 0x000000);
+	set(layer[openIframe_bg].bgalpha, 0.5);
+	set(layer[openIframe_bg].bgcapture, true);
+	set(layer[openIframe_bg].handcursor, false);
+	set(layer[openIframe_bg].alpha, 0.0);
+	set(layer[openIframe_bg].onclick, closeIframe());	
+	tween(layer[openIframe_bg].alpha, 1.0, 0.5, default);
+);
+</action>
+<action name="openIframe">
+Iframe_bg();
+js(openIframe(%1,%2,%3,1));
+</action>
+
+<krpano devices="mobile">
+<action name="openIframe">
+txtadd(openurl,%3,'/m_type/1');
+openwindow(get(openurl),100%,100%);
+</action>
+</krpano>
+
+<action name="openLink">
+js(openLink(%1));
+</action>
+<action name="closeIframe">
+set(layer[openIframe_bg].onclick, null);
+js(closeIframe());
+tween(layer[openIframe_bg].alpha, 0.0, 0.5, default,
+	removelayer(openIframe_bg);
+	set(layer[Iframe_close].visible, false);
+);
+</action>
+
+
+<krpano devices="mobile">
+<layer name="zj-logo" x="10" y="45" scale="0.5" altscale="0.5"/>
+<layer name="ui_logo" y="50" scale="0.5" altscale="0.5" />
+<layer name="welcome" scale="0.2" altscale="0.2"/>
+<style name="cms_view" x="10" css="font-family:黑体; font-size:12px; color:#FFFFFF;" />
+</krpano>
+
+
+
+    
+    
+	 
+
+    
+    
+    <scene name="scene1" title="法式14" group_id="0" thumburl="%SWFPATH%/scene/scene1/thumb.jpg" onstart="newsceneevent();" firsttime="true">
+		            <events name="viewevent" />
+            <view hlookat="0" vlookat="0" fov="80" fisheye="0" fovmin="60" fovmax="80" />            
+            <preview url="%SWFPATH%/scene/scene1/view/preview.jpg?1537439211" />
+                <image type="CUBE">
+                    <cube url="%SWFPATH%/scene/scene1/view/pano_%s.png?1537439211" />
+                </image>            
+            
+            				
+            
+            			<!-- shipinredian -->
+            				
+			<!-- shipinredian for mobile -->
+			
+
+
+            
+            
+            
+
+            
+            
+			<!-- requtanshipin -->
+            			
+			<!-- shipinrequ -->
+            						
+
+            
+            
+            
+            			
+            <action name="newsceneevent">
+                                					if(scene[0].firsttime,
+                        becomestar();
+                        set(scene[0].firsttime,false);
+                    delayedcall(2, normalview(0,0,80)));                                            </action>
+
+                        <events onviewchange= "set(plugin[luopanbox].visible,false);set(plugin[luopan_bang].visible,false);"/>
+        </scene>
+    <plugin name="luopanbox" url="%SWFPATH%/toolbox/luopan/none.png" keep="true" zorder="1" children="false" align="righttop" edge="center" x="80" y="80" scale="1" scalechildren="true" destscale="1.0" alpha="1" visible="true" capture="true" handcursor="true" enabled="true"/>
+    <plugin name="luopan" url="%SWFPATH%/toolbox/luopan/kedu.png" keep="true" handcursor="false" parent="luopanbox" zorder="1" alpha="1"  y="0" align="center" mask="plugin[luopan_mask]" visible="true" enabled="false"/>
+    <plugin name="luopan_mask" url="%SWFPATH%/toolbox/luopan/luopan_mask.png" keep="true" zorder="4" parent="luopanbox" align="center" blendmode="normal" visible="false" capture="false" handcursor="true" enabled="false" />
+    <plugin name="luopan_quan" url="%SWFPATH%/toolbox/luopan/quan.png" alpha="1" keep="true" enabled="false" visible="true" parent="luopanbox" zorder="4" align="center" capture="false" handcursor="false"/>
+    <plugin name="luopan_hover" url="%SWFPATH%/toolbox/luopan/hover.png" keep="true" enabled="false" visible="true" parent="luopanbox" zorder="3" align="center" capture="false" handcursor="false" mask="plugin[luopan_mask]"/>
+    <plugin name="luopan_v" url="%SWFPATH%/toolbox/luopan/luopanv.png" keep="true" enabled="false" visible="true" parent="luopanbox" zorder="2" align="top" capture="false" handcursor="false" y="-37" />
+
+    <plugin name="luopan_bang" url="%SWFPATH%/toolbox/luopan/none.png" keep="true" zorder="8" align="righttop" edge="center" width="100" height="100" x="80" y="80" handcursor="false" alpha="1" />
+    <plugin name="luopan_bangdou" url="%SWFPATH%/toolbox/luopan/bang.png" keep="true" zorder="2" align="center" parent="luopan_bang"  x="0" y="0" ondown="startluopanslider();" onup="stopluopanslider();"/>
+    <krpano devices="mobile">				
+	<plugin name="luopanbox" scale="0.5" altscale="0.5" />
+	</krpano>
+
+	<action name="startluopanslider">
+    set(plugin[luopan_bangdou].backup_align, get(plugin[luopan_bangdou].align));
+    set(plugin[luopan_bangdou].backup_edge,  get(plugin[luopan_bangdou].edge));
+    plugin[luopan_bangdou].changeorigin(center,center);
+    sub(mouse_x_offset, plugin[luopan_bangdou].x, mouse.x);
+    sub(mouse_y_offset, plugin[luopan_bangdou].y, mouse.y);
+    set(image_dragging,true);
+    luopanslider();r\n";
+    </action>
+
+    <action name="stopluopanslider">
+    set(image_dragging, false);
+    set(plugin[luopan_bangdou].x, 0);
+    set(plugin[luopan_bangdou].y, 0);
+    </action>
+
+    <action name="luopanslider">
+    if(image_dragging,
+    add(ypos, mouse.y, mouse_y_offset);
+    add(xpos, mouse.x, mouse_x_offset);
+    if(ypos LT -35, set(ypos,-35));
+    if(ypos GT 35, set(ypos,35));
+    if(xpos LT -35, set(xpos,-35));
+    if(xpos GT 35, set(xpos,35));
+    copy(plugin[luopan_bangdou].y, ypos);
+    copy(plugin[luopan_bangdou].x, xpos);
+    setblend(get(val));
+    div(ypos , ypos , 40);
+    div(xpos , xpos , 15);
+    add(valx, xpos , 0);
+    add(valy, ypos , 0);
+    add(view.vlookat , valy , get(view.vlookat) );
+    add(view.hlookat , valx , get(view.hlookat) );
+    delayedcall(0.01, luopanslider() );
+    ,
+    plugin[luopan_bangdou].changeorigin(get(plugin[luopan_bangdou].backup_align), get(plugin[luopan_bangdou].backup_edge));
+    );
+    </action>
+</krpano>
