@@ -1,0 +1,8 @@
+#mainLoadingPage {
+    background-size: 100% 100%;
+}
+@keyframes running1
+{
+	from{transform:rotate(0deg);}
+	to{transform:rotate(360deg);}
+}
