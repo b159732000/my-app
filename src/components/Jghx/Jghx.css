@@ -1,0 +1,511 @@
+#JghxContainer {
+    background: url(../../images/fshx/jghxbg.jpg);
+    background-size: 100% 100%;
+
+
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+
+    height: 100vh;
+    width: 100%;
+
+    padding: 0;
+    margin: 0;
+}
+
+#JghxContainer .content {
+    height: 91vh;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* 標題圖案 */
+#JghxContainer .header {
+    height: 14vh;
+
+    /* 以此為基準點 */
+    position: relative;
+    overflow: hidden;
+}
+
+#JghxContainer .header img {
+    /* 定義大小 */
+    height: 100%;
+
+    /* 定義邊距 */
+    padding: 2vh 4vw;
+}
+
+
+/* 展示區 */
+#JghxContainer .showRoom {
+
+    height: 40vh;
+
+    position: relative;
+    overflow: hidden;
+
+    margin: 1vh 2vw;
+
+    -webkit-box-shadow: 0px 0px 2px 2px rgba(50, 50, 50, 0.69);
+    -moz-box-shadow: 0px 0px 2px 2px rgba(50, 50, 50, 0.69);
+    box-shadow: 0px 0px 2px 2px rgba(50, 50, 50, 0.69);
+}
+
+#JghxContainer .showRoom iframe {
+    border: 1px solid #000;
+    width: 100%;
+    height: 100%;
+}
+
+#JghxContainer .showRoom .combine {
+    position: absolute;
+    bottom: 0;
+
+    z-index: 3;
+
+    height: 5vh;
+    width: 100%;
+
+    display: flex;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 內容水平平靠右對齊 */
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+}
+
+#JghxContainer .showRoom .combine img {
+    height: 70%;
+    margin-right: 2vw;
+}
+
+
+
+#JghxContainer .map {
+    background: url(../../images/clickmapbg.png);
+    background-size: 100% 100%;
+
+    /* border: 1px solid red; */
+    /* 決定此區塊位置 */
+    z-index: 1;
+    top: 58vh;
+    left: 2vw;
+
+    /* 決定此區塊大小 */
+    height: 18vh;
+
+    position: absolute;
+    overflow: hidden;
+
+    display: flex;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 內容水平置中 */
+    -webkit-justify-content: left;
+    justify-content: left;
+
+}
+
+#JghxContainer .map a {
+    height: 90%;
+}
+
+#JghxContainer .map img {
+    height: 100%;
+}
+
+
+
+#JghxContainer .options {
+    height: 25vh;
+
+    position: relative;
+
+    display: flex;
+
+
+}
+
+#JghxContainer .options .houseStyle ul {
+    /* border: 1px solid #000; */
+    position: absolute;
+
+    width: 50vw;
+    height: 10vh;
+
+    bottom: 3vh;
+    left: 45vw;
+}
+
+#JghxContainer .options .houseStyle li {
+    display: inline-block;
+    margin: 2vw;
+}
+
+#JghxContainer .options .houseStyle #thy-indicate {
+    position: absolute;
+
+    width: 50%;
+    top: 3vh;
+    left: 0.5vw;
+}
+
+#JghxContainer .options .houseStyle #hty-indicate {
+    position: absolute;
+
+    width: 50%;
+    top: 3vh;
+    left: 23.5vw;
+}
+
+#JghxContainer .options .houseStyle li img {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 3px;
+    margin-right: 10px;
+}
+
+/* 桃花源 */
+#JghxContainer .options .houseStyle li:nth-child(1) img {
+    position: absolute;
+
+    top: 2.5vh;
+    left: 5vw;
+
+    height: 45%;
+}
+
+/* 海棠苑 */
+#JghxContainer .options .houseStyle li:nth-child(2) img {
+    position: absolute;
+
+    top: 2.5vh;
+    left: 28vw;
+
+    height: 47%;
+}
+
+/* #JghxContainer .options .houseStyle .ul .li img:first-child {
+    border: 1px solid #000;
+} */
+
+
+
+/* 看房方式選單 */
+#JghxContainer .options .viewWay {
+
+    width: 58vw;
+    height: 4vh;
+
+    position: absolute;
+
+    top: 8vh;
+    left: 40vw;
+
+    display: flex;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 為內容水平分散 */
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+#JghxContainer .options .viewWay div {
+    display: inline-block;
+    width: 30%;
+
+    display: flex;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 為內容水平分散 */
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+#JghxContainer .options .viewWay div:nth-child(1) {
+    animation-delay: 0.2s;
+}
+#JghxContainer .options .viewWay div:nth-child(1) .viewWayIndicater {
+    animation-delay: 0.7s;
+}
+
+#JghxContainer .options .viewWay div:nth-child(2) {
+    animation-delay: 0.3s;
+}
+#JghxContainer .options .viewWay div:nth-child(2) .viewWayIndicater {
+    animation-delay: 0.7s;
+}
+
+#JghxContainer .options .viewWay div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+#JghxContainer .options .viewWay div:nth-child(3) .viewWayIndicater {
+    animation-delay: 0.7s;
+}
+
+#JghxContainer .options .viewWay .viewWayBg {
+    width: 100%;
+}
+
+#JghxContainer .options .viewWay .viewWayBg a {
+    height: 100%;
+    padding-bottom: 0.3vh;
+}
+
+#JghxContainer .options .viewWay div div img {
+    width: 100%;
+}
+
+#JghxContainer .options .viewWay .viewWayIndicater {
+    background-color: #B59273;
+    position: absolute;
+    animation: centerToSideIn 1s ease;
+    /* 讓動畫停留在最後一格 */
+    animation-fill-mode: forwards;
+    /* height: 10%;
+    width: 90%; */
+    bottom: 0;
+}
+@keyframes centerToSideIn {
+    from {width: 0%; height: 10%;}
+    to {width: 90%; height: 10%;}
+
+}
+
+
+/* 樓層選單正式布局 */
+#JghxContainer .showRoom .floorChoice {
+    /* border: 1px solid #000; */
+
+    height: 17vh;
+    width: 7vw;
+
+    position: absolute;
+
+    right: 1vw;
+    bottom: 6vh;
+
+    z-index: 3;
+
+    display: flex;
+    /* 改為垂直排列 */
+    flex-direction: column;
+    /* 此時為水平置中 (平時為內容垂直置中) */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 此時為垂直分散 (平時為內容水平分散) */
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+
+/* 修正: 1.2F在iphone上delay 2.顏色調整 3.陰影被邊框截掉 */
+/* 樓層選單特效嘗試 */
+#JghxContainer .menu-item {
+    background: #EEEEEE;
+    border-radius: 10%;
+    width: 30px;
+    height: 30px;
+    /* margin-left: -40px; */
+    /* position: absolute; */
+    color: #FFFFFF;
+    text-align: center;
+    /* line-height: 80px; */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform ease-out 200ms;
+    transition: -webkit-transform ease-out 200ms;
+    transition: transform ease-out 200ms;
+    transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+#JghxContainer .floorChoice a {
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+}
+
+#JghxContainer .floorChoice .choosen {
+    border: 4px solid rgb(221, 182, 111);
+}
+
+#JghxContainer .blue {
+    background-color: #9A8C98;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+
+    animation-delay: 0.4s;
+}
+
+#JghxContainer .green {
+    background-color: rgba(74, 78, 105, 0.8);
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+
+    animation-delay: 0.3s;
+}
+
+#JghxContainer .red {
+    background-color: rgba(34, 34, 59, 0.8);
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+
+    animation-delay: 0.2s;
+}
+
+
+
+/* 全景看房清單 */
+
+#JghxContainer .qjList {
+    background: url(../../images/qjk.png);
+    background-size: 100% 100%;
+
+    height: 50vh;
+    width: 100vw;
+
+    position: absolute;
+    top: 20%;
+    left: 0;
+
+    z-index: 5;
+    
+    display: flex;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 為內容水平分散 */
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    padding: 5%;
+}
+
+#JghxContainer .qjList ul {
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 為內容水平分散 */
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+#JghxContainer .qjList ul li {
+    display: inline-block;
+
+    position: relative;
+    width: 30%;
+    /* height: 20%; */
+
+    display: flex;
+    /* 內容垂直置中 */
+    -webkit-align-items: center;
+    align-items: center;
+    /* 為內容水平分散 */
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+
+#JghxContainer .qjList li img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 關閉qjList */
+#JghxContainer .close {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+  }
+  #JghxContainer .close:hover {
+    opacity: 1;
+  }
+  #JghxContainer .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  #JghxContainer .close:before {
+    transform: rotate(45deg);
+  }
+  #JghxContainer .close:after {
+    transform: rotate(-45deg);
+  }
+
+
+
+  /* 全景 */
+  #JghxContainer #panomera {
+    border: 1px solid #000;
+
+    z-index: 100;
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+#JghxContainer .getBack {
+    position: absolute;
+
+    background: url(../../images/goback.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 20vw;
+    height: 4vh;
+
+    top: 5vh;
+    right: 5vw;
+    
+    /* 為了讓此層浮在最上面，供用戶點選 */
+    z-index: 101;
+}
+
+#JghxContainer .getBack a {
+    /* 為了讓大小設定起作用，設定為block */
+    display: block;
+    width: 20vw;
+    height: 4vh;
+}
+
+
+
+/* 
+.menuActive {
+    transition-duration: 180ms;
+    -webkit-transition-duration: 180ms;
+    -webkit-transform: translate3d(0.08361px, -104.99997px, 0);
+    transform: translate3d(0.08361px, -104.99997px, 0);
+} */
