@@ -114,19 +114,34 @@ class Jghx extends React.Component {
     }
 
     // 決定整個Jghx是否要顯示 <--為了顯示、隱藏小map而做此功能
-    changeWholeJghxDisplay() {
+    hideWholeJghx() {
+        this.setState({
+            jghxDisplay: { display: 'none'}
+        })
+    }
+
+    showWholeJghx() {
+        this.setState({
+            jghxDisplay: { display: ''}
+        })
     }
 
     handleMapClick() {
-        
+        this.showZxbx();
+        this.hideWholeJghx();
+    }
+
+    handleMapBackClick() {
+        this.hideZxbx();
+        this.showWholeJghx();
     }
 
     render() {
         return (
             <div>
-                {(this.state.ZxbxIsShowing) ? (<Zxbx></Zxbx>) : null}
-                {/*<Zxbx hideZxbx={(e) => this.hideZxbx(e)} className={((this.state.panoramaShowing)?"":"noDisplay")}></Zxbx>*/}      {/** 將HideZxbx傳給子元件使用 */}
+                {(this.state.ZxbxIsShowing) ? (<Zxbx handleMapBackClick={(e) => this.handleMapBackClick(e)}></Zxbx>) : null}
                 <div id="JghxContainer" style={this.state.jghxDisplay}>
+                {/*<div id="JghxContainer" style={{display: 'none'}}>*/}
                     <div className="content">
 
                         <div className="header">
@@ -161,7 +176,7 @@ class Jghx extends React.Component {
 
                         {/** 小型地圖 */}
                         <div className="map">
-                            <a onClick={() => this.showZxbx()}><img id="map" src={(this.state.threeDBuilding === "thy") ? (require("../../images/zshx/map/bjt-w1.png")) : (require("../../images/zshx/map/bjt-q1.png"))} alt="" /></a>
+                            <a onClick={() => this.handleMapClick()}><img id="map" src={(this.state.threeDBuilding === "thy") ? (require("../../images/zshx/map/bjt-w1.png")) : (require("../../images/zshx/map/bjt-q1.png"))} alt="" /></a>
                         </div>
 
 

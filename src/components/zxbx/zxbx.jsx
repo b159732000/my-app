@@ -9,7 +9,7 @@ class Zxbx extends React.Component {
 
                 <div id="ZxbxContainer">
 
-                    <div class="getBack" onClick={(e) => this.props.hideZxbx(e)}></div>
+                    <div class="getBack" onClick={(e) => this.props.handleMapBackClick(e)}></div>
 
                     <div class="content">
                         <div class="upper">
