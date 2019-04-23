@@ -14,6 +14,14 @@
     margin: 0;
 }
 
+#JghxContainer .noDisplay {
+    display: none !important;
+}
+
+#JghxContainer .unVisible {
+    visibility: hidden !important;
+}
+
 #JghxContainer .content {
     height: 91vh;
 
@@ -24,6 +32,7 @@
 /* 標題圖案 */
 #JghxContainer .header {
     height: 14vh;
+    width: 100%;
 
     /* 以此為基準點 */
     position: relative;
@@ -43,6 +52,7 @@
 #JghxContainer .showRoom {
 
     height: 40vh;
+    width: 95vw;
 
     position: relative;
     overflow: hidden;
@@ -92,7 +102,7 @@
     /* border: 1px solid red; */
     /* 決定此區塊位置 */
     z-index: 1;
-    top: 58vh;
+    top: 64vh;
     left: 2vw;
 
     /* 決定此區塊大小 */
@@ -123,6 +133,7 @@
 
 #JghxContainer .options {
     height: 25vh;
+    width: 100%;
 
     position: relative;
 
@@ -372,6 +383,7 @@
 /* 全景看房清單 */
 
 #JghxContainer .qjList {
+    border: 1px solid #000;
     background: url(../../images/qjk.png);
     background-size: 100% 100%;
 
