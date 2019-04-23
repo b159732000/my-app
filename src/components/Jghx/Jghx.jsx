@@ -16,6 +16,8 @@ class Jghx extends React.Component {
             threeDBuilding: "thy",
             panoramaShowing: false,
             panoramaCode: "",
+            ZxbxIsShowing: false,
+            jghxDisplay: { display: "" }
         }
     }
 
@@ -79,7 +81,7 @@ class Jghx extends React.Component {
         this.setState({
             panoramaCode: selectedPanoramaCode,
             panoramaShowing: !this.panoramaShowing,
-        }, function() {
+        }, function () {
             console.log(this.state);
         })
     }
@@ -92,18 +94,39 @@ class Jghx extends React.Component {
     }
 
     mapSrc() {
-        if(this.state.threeDBuilding === "thy") {
+        if (this.state.threeDBuilding === "thy") {
             // return zxbx
         } else if (this.state.threeDBuilding === "hty") {
             // 暫時也 return zxbx (cheats)
         }
     }
 
+    hideZxbx() {
+        this.setState({
+            ZxbxIsShowing: false
+        }, function () {
+            console.log(this.state.ZxbxIsShowing);
+        })
+    }
+
+    showZxbx() {
+        this.setState({ ZxbxIsShowing: true })
+    }
+
+    // 決定整個Jghx是否要顯示 <--為了顯示、隱藏小map而做此功能
+    changeWholeJghxDisplay() {
+    }
+
+    handleMapClick() {
+        
+    }
+
     render() {
         return (
             <div>
-                <Zxbx></Zxbx>
-                <div id="JghxContainer" style={{display: "none"}}>
+                {(this.state.ZxbxIsShowing) ? (<Zxbx></Zxbx>) : null}
+                {/*<Zxbx hideZxbx={(e) => this.hideZxbx(e)} className={((this.state.panoramaShowing)?"":"noDisplay")}></Zxbx>*/}      {/** 將HideZxbx傳給子元件使用 */}
+                <div id="JghxContainer" style={this.state.jghxDisplay}>
                     <div className="content">
 
                         <div className="header">
@@ -115,12 +138,12 @@ class Jghx extends React.Component {
 
                             <div className="combine">
                                 {/* 顯示&隱藏 拆分/合併按鈕 */}
-                                <img id="combine" onClick={(e) => this.changeThreeDFloor("1F", e)} className={(this.state.threeDViewWay !== "viewWaySwlp")?"noDisplay":""} src={require("../../images/btn/fen.png")} alt="" />       {/* 此為拆分按鈕 */}
-                                <img id="combine" onClick={(e) => this.changeThreeDViewWay("viewWaySwsp")} className={(this.state.threeDViewWay === "viewWaySwlp")?"noDisplay":""} src={require("../../images/btn/he.png")} alt="" />       {/* 此為合併按鈕 */}
+                                <img id="combine" onClick={(e) => this.changeThreeDFloor("1F", e)} className={(this.state.threeDViewWay !== "viewWaySwlp") ? "noDisplay" : ""} src={require("../../images/btn/fen.png")} alt="" />       {/* 此為拆分按鈕 */}
+                                <img id="combine" onClick={(e) => this.changeThreeDViewWay("viewWaySwsp")} className={(this.state.threeDViewWay === "viewWaySwlp") ? "noDisplay" : ""} src={require("../../images/btn/he.png")} alt="" />       {/* 此為合併按鈕 */}
                             </div>
 
                             {/*樓層選擇*/}
-                            <div className={"floorChoice" + ((this.state.threeDViewWay === "viewWaySwlp")?"":" noDisplay")} id="floorOption">
+                            <div className={"floorChoice" + ((this.state.threeDViewWay === "viewWaySwlp") ? "" : " noDisplay")} id="floorOption">
 
                                 {/* <a id="2F" href="#" onClick={this.changeThreeDFloor}大概等於下面這行的寫法，只少了傳遞數值 */}
                                 <a id="2F" href="#" onClick={(e) => this.changeThreeDFloor("2F", e)}
@@ -138,7 +161,7 @@ class Jghx extends React.Component {
 
                         {/** 小型地圖 */}
                         <div className="map">
-                            <a href="./zxbx.html"><img id="map" src={(this.state.threeDBuilding === "thy")?(require("../../images/zshx/map/bjt-w1.png")):(require("../../images/zshx/map/bjt-q1.png"))} alt="" /></a>
+                            <a onClick={() => this.showZxbx()}><img id="map" src={(this.state.threeDBuilding === "thy") ? (require("../../images/zshx/map/bjt-w1.png")) : (require("../../images/zshx/map/bjt-q1.png"))} alt="" /></a>
                         </div>
 
 
@@ -182,10 +205,10 @@ class Jghx extends React.Component {
                         </div>
                     </div>
 
-                    <iframe id="panomera" src={"http://hvr.isunupcg.com/james/cuihu-optimize/qj/" + this.state.panoramaCode + "/pano/index.html"} frameborder="0" className={(this.state.panoramaShowing)?"":"noDisplay"}></iframe>
+                    <iframe id="panomera" src={"http://hvr.isunupcg.com/james/cuihu-optimize/qj/" + this.state.panoramaCode + "/pano/index.html"} frameborder="0" className={(this.state.panoramaShowing) ? "" : "noDisplay"}></iframe>
 
                     {/*全景和返回鍵*/}
-                    <div id="getBack" className={"getBack" + ((this.state.panoramaShowing)?"":" noDisplay")} onClick={(e) => this.closePanorama()}>
+                    <div id="getBack" className={"getBack" + ((this.state.panoramaShowing) ? "" : " noDisplay")} onClick={(e) => this.closePanorama()}>
                     </div>
 
                     <div className={"qjList " + ((this.state.threeDViewWay === "viewWayQjkf") ? "" : "noDisplay")}>
@@ -209,7 +232,7 @@ class Jghx extends React.Component {
                         </ul>
                         <div className="close" onClick={(e) => this.changeThreeDViewWay("viewWaySwlp")}></div>
                     </div>
-                    
+
 
                 </div>
             </div>
