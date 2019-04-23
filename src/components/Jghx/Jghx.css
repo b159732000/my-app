@@ -505,12 +505,6 @@
     z-index: 101;
 }
 
-#JghxContainer .getBack a {
-    /* 為了讓大小設定起作用，設定為block */
-    display: block;
-    width: 20vw;
-    height: 4vh;
-}
 
 
 
