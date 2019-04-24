@@ -16,12 +16,13 @@ class Xmjs extends React.Component {
     }
     componentDidMount() {
         new Swiper(this.swiperID, {
+            direction: 'vertical',
             pagination: {
                 el: this.paginateID,
-                // observer: true,
+                observer: true,
             },
-        });
-        
+            });
+
     }
 
     // componentWillUnmount() {
@@ -52,8 +53,8 @@ class Xmjs extends React.Component {
 
                 <div className="swiper-container" ref={self => this.swiperID = self}>
                     <div className="swiper-wrapper">
-                        <div className="swiper-slide">123</div>
-                        <div className="swiper-slide">234</div>
+                        <div className="swiper-slide"></div>
+                        <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
@@ -85,7 +86,7 @@ class Xmjs extends React.Component {
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                     </div>
-                        {/*<div className="swiper-pagination" id='body-left-pagination'></div>*/}
+                    <div className="swiper-pagination" id='body-left-pagination'></div>
 
                 </div>
 
