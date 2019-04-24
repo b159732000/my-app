@@ -3,6 +3,7 @@ import React from 'react'
 import Iframe from 'react-iframe'
 import { Zxbx } from '../zxbx'
 
+
 import "./Jghx.css"
 
 
@@ -116,13 +117,13 @@ class Jghx extends React.Component {
     // 決定整個Jghx是否要顯示 <--為了顯示、隱藏小map而做此功能
     hideWholeJghx() {
         this.setState({
-            jghxDisplay: { display: 'none'}
+            jghxDisplay: { display: 'none' }
         })
     }
 
     showWholeJghx() {
         this.setState({
-            jghxDisplay: { display: ''}
+            jghxDisplay: { display: '' }
         })
     }
 
@@ -141,7 +142,7 @@ class Jghx extends React.Component {
             <div>
                 {(this.state.ZxbxIsShowing) ? (<Zxbx handleMapBackClick={(e) => this.handleMapBackClick(e)}></Zxbx>) : null}
                 <div id="JghxContainer" style={this.state.jghxDisplay}>
-                {/*<div id="JghxContainer" style={{display: 'none'}}>*/}
+                    {/*<div id="JghxContainer" style={{display: 'none'}}>*/}
                     <div className="content">
 
                         <div className="header">

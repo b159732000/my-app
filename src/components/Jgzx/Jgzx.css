@@ -1,4 +1,4 @@
-.container {
+#JgzxContainer {
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
     background-repeat: no-repeat;
 }
 
-.content {
+#JgzxContainer .content {
 
     height: 91vh;
     width: 100%;
@@ -35,61 +35,10 @@
 }
 
 
-/* 底部導行列 */
-.mainNav {
-    position: fixed;
-    bottom: 0;
-    z-index: 1;
-}
-
-.mainNavUl {
-    background: url(../../images/bottomChoice.png);
-
-    height: 9vh;
-
-    /* 為了讓水平/垂直置中起作用 */
-    display: flex;
-
-    /* 內容垂直置中 */
-    -webkit-align-items: center;
-    align-items: center;
-
-    /* 內容水平置中 */
-    -webkit-justify-content: center;
-    justify-content: center;
-
-    margin: 0;
-}
-
-.mainNavUl li {
-    padding: 2vw;
-    -webkit-flex: 1;
-    flex: 1;
-
-    /* 為了讓水平/垂直置中起作用 */
-    display: flex;
-
-    /* 內容垂直置中 */
-    -webkit-align-items: center;
-    align-items: center;
-
-    /* 內容水平置中 */
-    -webkit-justify-content: center;
-    justify-content: center;
-}
-
-.mainNavUl li a img {
-    margin: auto;
-
-    width: 95%;
-    /* width: 25vw;
-    height: 10vh; */
-}
-
 
 
 /* 本文 */
-.position {
+#JgzxContainer .position {
 
     width: 40vw;
     height: 33vh;
@@ -105,16 +54,16 @@
 }
 
 /* 迴廊群組 (縮圖+文字) */
-.position:first-child {
+#JgzxContainer .position:first-child {
     padding-bottom: 5%;
 }
 
 /* 庭院群組 (縮圖+文字) */
-.position:last-child {
+#JgzxContainer .position:last-child {
     padding-top: 5%;
 }
 
-.position a {
+#JgzxContainer .position a {
     display: flex;
     flex-direction: column;
     /* 此時為內容水平置中 */
@@ -126,12 +75,12 @@
 }
 
 /* 縮圖 */
-.position img {
+#JgzxContainer .position img {
     width: 100%;
 }
 
 /* 文字標示 (迴廊/庭院) */
-.position .tag {
+#JgzxContainer .position .tag {
     width: 50%;
     margin-top: 1vh;
 }
