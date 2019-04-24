@@ -14,6 +14,12 @@ class NavigationBar extends React.Component {
     render() {
         return (
             <BrowserRouter id="BrowserRouterContainer">
+            {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
+                而後方有/about的話會渲染About*/}
+            <Route path="/Xmjs" component={Xmjs} />
+            <Route path="/Qwzs" component={Qwzs} />
+            <Route path="/Jghx" component={Jghx} />
+            <Route path="/Jgzx" component={Jgzx} />
                 <div id='NavigationBarContainer'>
 
                     <nav className="mainNav">
@@ -24,15 +30,8 @@ class NavigationBar extends React.Component {
                             <li id="buttonToJgzx"><Link to="/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
                         </ul>
                     </nav>
-
-                    {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
-                    而後方有/about的話會渲染About*/}
-                    <Route path="/Xmjs" component={Xmjs} />
-                    <Route path="/Qwzs" component={Qwzs} />
-                    <Route path="/Jghx" component={Jghx} />
-                    <Route path="/Jgzx" component={Jgzx} />
-
                 </div>
+
             </BrowserRouter>
         )
     }
