@@ -153,8 +153,8 @@ class Jghx extends React.Component {
 
                             <div className="combine">
                                 {/* 顯示&隱藏 拆分/合併按鈕 */}
-                                <img id="combine" onClick={(e) => this.changeThreeDFloor("1F", e)} className={(this.state.threeDViewWay !== "viewWaySwlp") ? "noDisplay" : ""} src={require("../../images/btn/fen.png")} alt="" />       {/* 此為拆分按鈕 */}
-                                <img id="combine" onClick={(e) => this.changeThreeDViewWay("viewWaySwsp")} className={(this.state.threeDViewWay === "viewWaySwlp") ? "noDisplay" : ""} src={require("../../images/btn/he.png")} alt="" />       {/* 此為合併按鈕 */}
+                                <img id="combine" onClick={(e) => this.changeThreeDFloor("1F", e)} className={(this.state.threeDViewWay === "viewWaySwlp") ? "noDisplay" : ""} src={require("../../images/btn/he.png")} alt="" />       {/* 此按下去會拆分，目前圖示為合併 */}
+                                <img id="combine" onClick={(e) => this.changeThreeDViewWay("viewWaySwsp")} className={(this.state.threeDViewWay !== "viewWaySwlp") ? "noDisplay" : ""} src={require("../../images/btn/fen.png")} alt="" />       {/* 此按下去會合併，目前圖示為拆分 */}
                             </div>
 
                             {/*樓層選擇*/}
