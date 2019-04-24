@@ -13,6 +13,8 @@ class Qwzs extends React.Component {
             showTjw: "hidden",
             showXmpt: "hidden",
             showQj: "hidden",
+            activeTab: "fourLakes",
+            activeDestination: "to1"
         }
     }
 
@@ -33,25 +35,25 @@ class Qwzs extends React.Component {
         // 顯示點擊的頁面
         switch (selectedButton) {
             case "fourLakes":
-            this.setState({showFourLakes: ""});
+            this.setState({showFourLakes: "", activeTab: "fourLakes"});
             break;
             case "traffic":
-            this.setState({showTraffic: ""});
+            this.setState({showTraffic: "", activeTab: "traffic"});
             break;
             case "tjw":
-            this.setState({showTjw: ""});
+            this.setState({showTjw: "", activeTab: "tjw"});
             break;
             case "xmpt":
-            this.setState({showXmpt: ""});
+            this.setState({showXmpt: "", activeTab: "xmpt"});
             break;
             case "Qj":
-            this.setState({showQj: ""});
+            this.setState({showQj: "", activeTab: "Qj"});
             break;
             default:
             break;
         }
-    }
 
+    }
 
 
     // 增加/刪除 Panorama Url
@@ -62,8 +64,8 @@ class Qwzs extends React.Component {
             return null;
         }
     }
-
-
+    
+    // 關閉全景並跳回第四頁
     closePanorama = () => {
         this.setState({
             showFourLakes: "hidden",
@@ -72,8 +74,16 @@ class Qwzs extends React.Component {
             showXmpt: "",
             showQj: "hidden",
         })
-        console.log("success");
+        this.changeActiveTab("xmpt");
     }
+
+    // 更換路線 (更新state中的路線)
+    changeDestination(path) {
+        this.setState({
+            activeDestination: path
+        }, function() {console.log(this.state.activeDestination);})
+    }
+
 
     render() {
         return (
@@ -107,20 +117,20 @@ class Qwzs extends React.Component {
 
                         {/*  唐家灣片區  */}
                         <div className={"tjw" + " " + this.state.showTjw} id="tjw">
-                            <i className="icon1"></i>
-                            <i className="icon2" style={{ display: "none" }}></i>
-                            <i className="icon3" style={{ display: "none" }}></i>
-                            <i className="icon4" style={{ display: "none" }}></i>
-                            <i className="icon5" style={{ display: "none" }}></i>
+                            <i className="icon1" style={(this.state.activeDestination === "to1")?{}:{ display: "none" }}></i>
+                            <i className="icon2" style={(this.state.activeDestination === "to2")?{}:{ display: "none" }}></i>
+                            <i className="icon3" style={(this.state.activeDestination === "to3")?{}:{ display: "none" }}></i>
+                            <i className="icon4" style={(this.state.activeDestination === "to4")?{}:{ display: "none" }}></i>
+                            <i className="icon5" style={(this.state.activeDestination === "to5")?{}:{ display: "none" }}></i>
                             <i className="icon main animated bounceIn"></i>
 
                             <div className="toList">
                                 <ul>
-                                    <li><img onClick="changeTravelDestination('to1')" id="to1" src={require("../../images/to1ed.png")} alt="" /></li>
-                                    <li><img onClick="changeTravelDestination('to2')" id="to2" src={require("../../images/to2.png")} alt="" /></li>
-                                    <li><img onClick="changeTravelDestination('to3')" id="to3" src={require("../../images/to3.png")} alt="" /></li>
-                                    <li><img onClick="changeTravelDestination('to4')" id="to4" src={require("../../images/to4.png")} alt="" /></li>
-                                    <li><img onClick="changeTravelDestination('to5')" id="to5" src={require("../../images/to5.png")} alt="" /></li>
+                                    <li><img onClick={()=>this.changeDestination('to1')} id="to1" src={(this.state.activeDestination === "to1")?require("../../images/to1ed.png"):require("../../images/to1.png")} alt="" /></li>
+                                    <li><img onClick={()=>this.changeDestination('to2')} id="to2" src={(this.state.activeDestination === "to2")?require("../../images/to2ed.png"):require("../../images/to2.png")} alt="" /></li>
+                                    <li><img onClick={()=>this.changeDestination('to3')} id="to3" src={(this.state.activeDestination === "to3")?require("../../images/to3ed.png"):require("../../images/to3.png")} alt="" /></li>
+                                    <li><img onClick={()=>this.changeDestination('to4')} id="to4" src={(this.state.activeDestination === "to4")?require("../../images/to4ed.png"):require("../../images/to4.png")} alt="" /></li>
+                                    <li><img onClick={()=>this.changeDestination('to5')} id="to5" src={(this.state.activeDestination === "to5")?require("../../images/to5ed.png"):require("../../images/to5.png")} alt="" /></li>
                                 </ul>
                             </div>
                         </div>
@@ -145,11 +155,11 @@ class Qwzs extends React.Component {
                         <div className="secondMenu">
                             <ul>
                                 {/*  <li><a onClick="changeToActiveTab('w1')"><img id="w1" src={require("../../images/1ed.png")} alt=""></a></li>  */}
-                                <li><a onClick={this.changeActiveTab.bind(this, "fourLakes")}><img id="w1" src={require("../../images/1ed.png")} alt="" /></a></li>
-                                <li><a onClick={this.changeActiveTab.bind(this, "traffic")}><img id="w2" src={require("../../images/w2.png")} alt="" /></a></li>
-                                <li><a onClick={this.changeActiveTab.bind(this, "tjw")}><img id="w3" src={require("../../images/w3.png")} alt="" /></a></li>
-                                <li><a onClick={this.changeActiveTab.bind(this, "xmpt")}><img id="w4" src={require("../../images/w4.png")} alt="" /></a></li>
-                                <li><a onClick={this.changeActiveTab.bind(this, "Qj")}><img id="w5" src={require("../../images/w5.png")} alt="" /></a></li>
+                                <li><a onClick={this.changeActiveTab.bind(this, "fourLakes")}><img id="w1" src={(this.state.activeTab === "fourLakes")?require("../../images/1ed.png"):require("../../images/w1.png")} alt="" /></a></li>
+                                <li><a onClick={this.changeActiveTab.bind(this, "traffic")}><img id="w2" src={(this.state.activeTab === "traffic")?require("../../images/2ed.png"):require("../../images/w2.png")} alt="" /></a></li>
+                                <li><a onClick={this.changeActiveTab.bind(this, "tjw")}><img id="w3" src={(this.state.activeTab === "tjw")?require("../../images/3ed.png"):require("../../images/w3.png")} alt="" /></a></li>
+                                <li><a onClick={this.changeActiveTab.bind(this, "xmpt")}><img id="w4" src={(this.state.activeTab === "xmpt")?require("../../images/4ed.png"):require("../../images/w4.png")} alt="" /></a></li>
+                                <li><a onClick={this.changeActiveTab.bind(this, "Qj")}><img id="w5" src={(this.state.activeTab === "Qj")?require("../../images/5ed.png"):require("../../images/w5.png")} alt="" /></a></li>
                             </ul>
                         </div>
 
@@ -159,12 +169,11 @@ class Qwzs extends React.Component {
                     <div className={"qj" + " " + this.state.showQj}>
 
                         <div id="getBack" className="getBack">
-                            <a onClick={this.closePanorama}></a>
+                            <a onClick={(this.closePanorama)}></a>
                         </div>
                         <Iframe id="panomera" url={this.panoramaUrl()} frameborder="0"></Iframe>
                         {/*<iframe id="panomera" src={require("../../qj/39/pano/index.html")} frameborder="0"></iframe>*/}
                     </div>
-
 
                 </div>
             </div>
