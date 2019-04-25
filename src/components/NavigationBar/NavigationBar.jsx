@@ -1,25 +1,41 @@
 import React from "react"
-import { BrowserRouter, Route, Link } from "react-router-dom"
+import Loadable from 'react-loadable'
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
 
 // 本頁的CSS
 import "./NavigationBar.css"
 
 // 我自訂的所有分頁 (components)
+import { FirstChoicePage } from "../FirstChoicePage"
 import { Xmjs } from "../Xmjs"
 import { Qwzs } from "../Qwzs"
 import { Jghx } from '../Jghx';
 import { Jgzx } from "../Jgzx"
 
+    const Loading = ({ pastDelay, timedOut, error }) => {
+        if (pastDelay) {
+        return <div>Loading...</div>;
+        } else if (timedOut) {
+        return <div>Taking a long time...</div>;
+        } else if (error) {
+        return <div>Error!</div>;
+        }
+        return null;
+       };
+
 class NavigationBar extends React.Component {
+
+
     render() {
         return (
             <BrowserRouter id="BrowserRouterContainer">
-            {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
+                {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
                 而後方有/about的話會渲染About*/}
-            <Route path="/Xmjs" component={Xmjs} />
-            <Route path="/Qwzs" component={Qwzs} />
-            <Route path="/Jghx" component={Jghx} />
-            <Route path="/Jgzx" component={Jgzx} />
+                <Route path="/" exact component={FirstChoicePage} />
+                <Route path="/Xmjs" component={Xmjs} />
+                <Route path="/Qwzs" component={Qwzs} />
+                <Route path="/Jghx" component={Jghx} />
+                <Route path="/Jgzx" component={Jgzx} />
                 <div id='NavigationBarContainer'>
 
                     <nav className="mainNav">
