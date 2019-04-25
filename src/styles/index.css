@@ -127,38 +127,7 @@ body {
 
 
 
-/* 首頁底部的圖片及文字 */
-.homepageFooter {
-    /* border: 5px solid black; */
 
-    /* 為了讓Top...等等 起作用 */
-    position: absolute;
-
-    top: 55vh;
-    
-    width: 100%;
-}
-
-.homepageFooter .img img {
-    width: 100%;
-}
-
-.homepageFooter .wordImg {
-
-    /* 1. 讓這個東西的定位以父元素為座標基準
-    2.為了讓Top...等方法起作用 */
-    position: absolute;
-
-    z-index: 1;
-    top: 17vh;
-    left: 25vw;
-
-    width: 70vh;
-}
-
-.homepageFooter .wordImg img {
-    width: 60%;
-}
 
 
 

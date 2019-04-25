@@ -52,7 +52,7 @@ class Jgzx extends React.Component {
                             <div>
                                 <a onClick={() => this.changeVideoIsShowing("JgzsHui", true)}>
                                     <img src={require("../../images/tingyuan.png")} alt="" />
-                                    <img className="tag" src={require("../../images/tingyuanp.png")} alt="" />
+                                    <img className="tag tag1" alt="" />
                                 </a>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ class Jgzx extends React.Component {
                             <div>
                                 <a onClick={() => this.changeVideoIsShowing("JgzsTing", true)}>
                                     <img src={require("../../images/huiliang.png")} alt="" />
-                                    <img className="tag" src={require("../../images/huiliangp.png")} alt="" />
+                                    <img className="tag tag2" alt="" />
                                 </a>
                             </div>
                         </div>

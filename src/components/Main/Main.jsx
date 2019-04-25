@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter, Route, Link } from "react-router-dom"
 
 // 本頁的CSS
-import "./Main.css"
+// import "./Main.css"
 
 // 我自訂的所有分頁 (components)
 import { MainLoadingPage } from "../MainLoadingPage"

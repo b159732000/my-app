@@ -1,7 +1,7 @@
 #NavigationBarContainer {
   height: 9vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   background: #000;
 }

@@ -82,5 +82,15 @@
 /* 文字標示 (迴廊/庭院) */
 #JgzxContainer .position .tag {
     width: 50%;
+    height: 5vh;
     margin-top: 1vh;
+}
+
+#JgzxContainer .position .tag1 {
+    background: url(../../images/tingyuanp.png);
+    background-size: contain;
+}
+#JgzxContainer .position .tag2 {
+    background: url(../../images/huiliangp.png);
+    background-size: contain;
 }

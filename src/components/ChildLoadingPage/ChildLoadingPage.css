@@ -1,0 +1,150 @@
+/* body {
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+} */
+
+#ChildLoadingPageContainer {
+  /* background-color: black; */
+  background-color: rgba(163, 164, 171, 0.94);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingAnimationPosition {
+  height: 40vh;
+}
+
+.loadingAnimation {
+  /* border: 1px solid green; */
+  height: 30vh;
+  width: 70vw;
+  position: relative;
+
+  display: flex;
+  /* 內容垂直置中 */
+  -webkit-align-items: center;
+  align-items: center;
+  /* 內容水平置中 */
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.centerLineContainer {
+  width: 20%;
+  height: 100%;
+  margin-left: 3vw;
+  display: flex;
+  /* 內容垂直置中 */
+  -webkit-align-items: center;
+  align-items: center;
+  /* 內容水平置中 */
+  -webkit-justify-content: left;
+  justify-content: left;
+}
+
+.centerLine {
+    width: 3px;
+    height: 38px;
+    background-color: #FFBB00;
+}
+
+.loadingAnimationImg {
+  /* border: 1px solid #000; */
+  /* background-image: url(../../images/childLoadingAnimation.gif); */
+  background-size: 100% 100%;
+  height: auto;
+  width: 40%;
+
+  display: table;
+  /* 內容垂直置中 */
+}
+
+.loadingAnimation .loadingProgressText {
+  /* border: 1px solid red; */
+  width: 40%;
+  color: rgb(66, 66, 66);
+  font-size: 2em;
+  font-weight: 300;
+  font-family: "Source Code Pro", monospace;
+  text-align: right;
+}
+
+/* 五個長條圖動畫 */
+.lds-grid {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-grid div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  top: 6px;
+  left: 6px;
+  animation-delay: 0s;
+}
+.lds-grid div:nth-child(2) {
+  top: 6px;
+  left: 26px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(3) {
+  top: 6px;
+  left: 45px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(4) {
+  top: 26px;
+  left: 6px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(5) {
+  top: 26px;
+  left: 26px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(6) {
+  top: 26px;
+  left: 45px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(7) {
+  top: 45px;
+  left: 6px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(8) {
+  top: 45px;
+  left: 26px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(9) {
+  top: 45px;
+  left: 45px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
