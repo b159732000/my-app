@@ -256,4 +256,5 @@ class Jghx extends React.Component {
     }
 }
 
-export { Jghx }
+// export { Jghx }
+export default Jghx

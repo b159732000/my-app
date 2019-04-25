@@ -1,43 +1,65 @@
 import React from "react"
 import Loadable from 'react-loadable'
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+// import routers from '../../router/index'
 
 // 本頁的CSS
 import "./NavigationBar.css"
 
 // 我自訂的所有分頁 (components)
 import { FirstChoicePage } from "../FirstChoicePage"
-import { Xmjs } from "../Xmjs"
-import { Qwzs } from "../Qwzs"
-import { Jghx } from '../Jghx';
-import { Jgzx } from "../Jgzx"
+// import { Xmjs } from "../Xmjs"
+// import { Qwzs } from "../Qwzs"
+// import { Jghx } from '../Jghx'
+// import { Jgzx } from "../Jgzx"
 
-    const Loading = ({ pastDelay, timedOut, error }) => {
-        if (pastDelay) {
+const Loading = ({ isLoading, error }) => {
+    if (isLoading) {
         return <div>Loading...</div>;
-        } else if (timedOut) {
-        return <div>Taking a long time...</div>;
-        } else if (error) {
+    } else if (error) {
         return <div>Error!</div>;
-        }
+    } else {
         return null;
-       };
+    }
+};
+
+const Xmjs = Loadable({
+    loader: () => import('../Xmjs/Xmjs.jsx'),
+    loading: Loading,
+    timeout: 10000,
+    delay: 200
+});
+const Qwzs = Loadable({
+    loader: () => import('../Qwzs/Qwzs.jsx'),
+    loading: Loading,
+    timeout: 10000,
+    delay: 200
+});
+const Jghx = Loadable({
+    loader: () => import('../Jghx/Jghx'),
+    loading: Loading,
+    timeout: 10000,
+    delay: 200
+});
+const Jgzx = Loadable({
+    loader: () => import('../Jgzx/Jgzx'),
+    loading: Loading,
+    timeout: 10000,
+    delay: 200
+});
 
 class NavigationBar extends React.Component {
-
-
     render() {
         return (
-            <BrowserRouter id="BrowserRouterContainer">
+            <Router id="BrowserRouterContainer">
                 {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
-                而後方有/about的話會渲染About*/}
+                    而後方有/about的話會渲染About*/}
                 <Route path="/" exact component={FirstChoicePage} />
                 <Route path="/Xmjs" component={Xmjs} />
                 <Route path="/Qwzs" component={Qwzs} />
                 <Route path="/Jghx" component={Jghx} />
                 <Route path="/Jgzx" component={Jgzx} />
                 <div id='NavigationBarContainer'>
-
                     <nav className="mainNav">
                         <ul className="mainNavUl">
                             <li id="buttonToXmjs"><Link to="/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
@@ -46,9 +68,8 @@ class NavigationBar extends React.Component {
                             <li id="buttonToJgzx"><Link to="/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
                         </ul>
                     </nav>
-                </div>
-
-            </BrowserRouter>
+            </div> 
+            </Router>
         )
     }
 }

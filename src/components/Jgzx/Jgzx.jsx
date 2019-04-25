@@ -77,4 +77,5 @@ class Jgzx extends React.Component {
     }
 }
 
-export { Jgzx };
+export default Jgzx
+// export { Jgzx };

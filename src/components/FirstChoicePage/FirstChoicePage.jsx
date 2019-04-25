@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Link } from "react-router-dom"
 import { MainLoadingPage } from "../MainLoadingPage"
 
 // 我自訂的所有分頁 (components)
-import { Xmjs } from "../Xmjs"
-import { Jgzx } from "../Jgzx"
+import Xmjs from "../Xmjs/Xmjs.jsx"
+import Jgzx from "../Jgzx/Jgzx.jsx"
 
 // 第三方庫
 import '../../styles/Animate.css';

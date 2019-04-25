@@ -95,4 +95,5 @@ class Xmjs extends React.Component {
     }
 }
 
-export { Xmjs };
+// export { Xmjs };
+export default Xmjs;

@@ -181,5 +181,6 @@ class Qwzs extends React.Component {
     }
 }
 
-export { Qwzs }
+// export { Qwzs }
+export default Qwzs 
 
