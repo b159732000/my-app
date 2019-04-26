@@ -28,31 +28,31 @@ const Loading = ({ isLoading, error }) => {
 const FirstChoicePage = Loadable({
     loader: () => import('../FirstChoicePage/FirstChoicePage.jsx'),
     loading: Loading,
-    timeout: 10000,
+    timeout: 25000,
     delay: 300
 })
 const Xmjs = Loadable({
     loader: () => import('../Xmjs/Xmjs.jsx'),
     loading: Loading,
-    timeout: 10000,
+    timeout: 25000,
     delay: 300
 });
 const Qwzs = Loadable({
     loader: () => import('../Qwzs/Qwzs.jsx'),
     loading: Loading,
-    timeout: 10000,
+    timeout: 25000,
     delay: 300
 });
 const Jghx = Loadable({
     loader: () => import('../Jghx/Jghx'),
     loading: Loading,
-    timeout: 10000,
+    timeout: 25000,
     delay: 300
 });
 const Jgzx = Loadable({
     loader: () => import('../Jgzx/Jgzx'),
     loading: Loading,
-    timeout: 10000,
+    timeout: 25000,
     delay: 2000
 });
 
@@ -82,7 +82,7 @@ class NavigationBar extends React.Component {
                 {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
                     而後方有/about的話會渲染About*/}
                 <Route path="/james/cuihu-react/" exact component={FirstChoicePage} />
-                <Route path="/james/cuihu-react/ChildLoadingPage" exact component={ChildLoadingPage} />
+                {/*<Route path="/james/cuihu-react/ChildLoadingPage" exact component={ChildLoadingPage} />*/}
                 <Route path="/james/cuihu-react/Xmjs" component={Xmjs} />
                 <Route path="/james/cuihu-react/Qwzs" component={Qwzs} />
                 <Route path="/james/cuihu-react/Jghx" component={Jghx} />
