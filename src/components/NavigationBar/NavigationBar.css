@@ -67,3 +67,21 @@
 
   width: 95%;
 }
+
+
+
+/* Child Loading Page Transition */
+.child-loading-page-transition-enter {    /* This fires as soon as the element enters the DOM */
+  opacity: 1;
+}
+.child-loading-page-transition-enter-active {   /* This is where we can add the transition*/
+  opacity: 1;
+  transition: all 400ms;
+}
+.child-loading-page-transition-exit {   /* This fires as soon as the this.state.showList is false */
+  opacity: 1;
+}
+.child-loading-page-transition-exit-active {    /* fires as element leaves the DOM*/
+  opacity: 0;
+  transition: all 400ms;
+}

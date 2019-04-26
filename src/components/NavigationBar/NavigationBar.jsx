@@ -1,6 +1,7 @@
 import React from "react"
 import Loadable from 'react-loadable'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+import { CSSTransition } from "react-transition-group"
 // import ImagesLoaded from 'react-images-loaded'
 // import routers from '../../router/index'
 
@@ -38,31 +39,31 @@ const FirstChoicePage = Loadable({
     loader: () => import('../FirstChoicePage/FirstChoicePage.jsx'),
     loading: Loading,
     timeout: 25000,
-    delay: 300
+    delay: 200
 })
 const Xmjs = Loadable({
     loader: () => import('../Xmjs/Xmjs.jsx'),
     loading: Loading,
     timeout: 25000,
-    delay: 300
+    delay: 200
 });
 const Qwzs = Loadable({
     loader: () => import('../Qwzs/Qwzs.jsx'),
     loading: Loading,
     timeout: 25000,
-    delay: 300
+    delay: 200
 });
 const Jghx = Loadable({
     loader: () => import('../Jghx/Jghx'),
     loading: Loading,
     timeout: 25000,
-    delay: 300
+    delay: 200
 });
 const Jgzx = Loadable({
     loader: () => import('../Jgzx/Jgzx'),
     loading: Loading,
     timeout: 25000,
-    delay: 300
+    delay: 200
 });
 
 class NavigationBar extends React.Component {
@@ -74,7 +75,8 @@ class NavigationBar extends React.Component {
             showLoadingPageStyle: {
                 display: '',
             },
-            loadingPageList: ["1"]
+            loadingPageList: ["1"],
+            showLoadingPage: false
         }
     }
 
@@ -99,7 +101,8 @@ class NavigationBar extends React.Component {
         if (thisTimeNeedLoadingPage) {
             this.setState({
                 showLoadingPageStyle: { display: '' },
-                loadingPageList: ["1"]
+                loadingPageList: ["1"],
+                showLoadingPage: true
             })
         } else {
             this.closeLoadingPage()
@@ -113,7 +116,7 @@ class NavigationBar extends React.Component {
         }, 350);
         setTimeout(() => {
             this.closeLoadingPage()
-        }, 3000)
+        }, 5000)
     }
 
     // 關閉Loading Page
@@ -121,7 +124,8 @@ class NavigationBar extends React.Component {
         setTimeout(() => {
             this.setState({
                 showLoadingPageStyle: { display: 'none' },
-                loadingPageList: []
+                loadingPageList: [],
+                showLoadingPage: false
             })
         }, 1000);
         console.log(this.state.showLoadingPageStyle)
@@ -154,11 +158,24 @@ class NavigationBar extends React.Component {
                     {/*預設不顯示*/}
                     {/*300毫秒後，詢問loadable我們這次需不需要顯示Loading Page，要的話就顯示*/}
                     {/*<div style={this.state.showLoadingPageStyle}><ChildLoadingPage state={this.state}></ChildLoadingPage></div>*/}
-                    {
+                    {/*
                         this.state.loadingPageList.map(function (item, index) {
                             return <ChildLoadingPage key={index}></ChildLoadingPage>
                         })
-                    }
+                    */}
+
+
+                    {/* Child Loading Page Transition */}
+                    <CSSTransition
+                        in={this.state.showLoadingPage}
+                        classNames="child-loading-page-transition"
+                        timeout={400}
+                        unmountOnExit
+                        appear
+                    >
+                        <div><ChildLoadingPage></ChildLoadingPage></div>
+                    </CSSTransition>
+
 
                     <div id='NavigationBarContainer'>
                         <nav className="mainNav">

@@ -66,6 +66,9 @@ class FirstChoicePage extends React.Component {
                         <div className="topChoice">
                             <ul className="choiceList">
                                 <div className="column">
+                                    {/*<li><Link to={{
+                                        pathname: '/james/cuihu-react/Xmjs'
+                                    }}>*/}
                                     <li><Link to="/james/cuihu-react/Xmjs">
                                         <Animated animationIn="rotateIn">
                                             <img id="topChoiceImg1" className="" src={require("../../images/topjs.png")} alt="" />

@@ -10,7 +10,7 @@
 
 #ChildLoadingPageContainer {
   /* background-color: black; */
-  background-color: rgba(163, 164, 171, 0.94);
+  background-color: rgba(163, 164, 171, 0.979);
   overflow: hidden;
   position: relative;
   height: 100vh;
@@ -25,59 +25,80 @@
 }
 
 .loadingAnimation {
-  /* border: 1px solid green; */
-  height: 30vh;
+  height: 19vh;
   width: 70vw;
   position: relative;
 
   display: flex;
   /* 內容垂直置中 */
-  -webkit-align-items: center;
-  align-items: center;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
   /* 內容水平置中 */
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
 }
 
-.centerLineContainer {
-  width: 20%;
+.leftWrapper {
+  position: relative;
   height: 100%;
-  margin-left: 3vw;
+  width: 48%;
+}
+.leftWrapperInner {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   display: flex;
-  /* 內容垂直置中 */
-  -webkit-align-items: center;
-  align-items: center;
-  /* 內容水平置中 */
-  -webkit-justify-content: left;
-  justify-content: left;
+    /* 內容垂直置中 */
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+    /* 內容水平置中 */
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
 }
-
-.centerLine {
-    width: 3px;
-    height: 38px;
-    background-color: #FFBB00;
-}
-
 .loadingAnimationImg {
-  /* border: 1px solid #000; */
   /* background-image: url(../../images/childLoadingAnimation.gif); */
   background-size: 100% 100%;
   height: auto;
-  width: 40%;
+  width: 44%;
+  position: absolute;
+  bottom: -5px;
+  right: 0;
 
-  display: table;
+  display: flex;
   /* 內容垂直置中 */
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  /* 內容水平置中 */
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
 }
-
 .loadingAnimation .loadingProgressText {
   /* border: 1px solid red; */
-  width: 40%;
+  height: 5vh;
+  width: 90%;
   color: rgb(66, 66, 66);
   font-size: 2em;
   font-weight: 300;
   font-family: "Source Code Pro", monospace;
   text-align: right;
 }
+.centerLineContainer {
+  height: 100%;
+  margin-left: 1vw;
+  display: flex;
+  /* 內容垂直置中 */
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  /* 內容水平置中 */
+  -webkit-justify-content: left;
+  justify-content: left;
+}
+.centerLine {
+    width: 3px;
+    height: 38px;
+    background-color: #FFBB00;
+}
+
 
 /* 五個長條圖動畫 */
 .lds-grid {

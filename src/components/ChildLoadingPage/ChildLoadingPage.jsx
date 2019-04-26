@@ -10,17 +10,25 @@ class ChildLoadingPage extends React.Component {
             numberStopAt: 93,
             percentageAddOneDuration: 20,
             loadingPercentage: 0,
-            childLoadingIsDone: false
+            childLoadingIsDone: false,
+            centerLineStyle: {
+                height: "20px"
+            }
         }
     }
 
     updateLoadingPercentage() {
         var w = 0,
+            thisTimeStopAt = this.state.numberStopAt + Math.random() * 10 - 5,
             t = setInterval(function () {
-                if (w < this.state.numberStopAt) {
+                if (w < thisTimeStopAt) {
                     w = w + 1;
+                    var centerLineStyleHeight = (10 + w * 0.3 + 'px');
                     this.setState({
-                        loadingPercentage: w
+                        loadingPercentage: w,
+                        centerLineStyle: {
+                            height: centerLineStyleHeight
+                        },
                     });
                 }
                 if (this.state.childLoadingIsDone) {
@@ -34,7 +42,7 @@ class ChildLoadingPage extends React.Component {
                         childLoadingIsDone: true
                     })
                 }
-            }.bind(this), 10);
+            }.bind(this), 50);
     }
 
     componentDidMount() {
@@ -51,8 +59,14 @@ class ChildLoadingPage extends React.Component {
 
                 <div className="loadingAnimationPosition">
                     <div className="loadingAnimation">
-                    <div className="loadingProgressText">{this.state.loadingPercentage + "%"}</div>
-                    <div className="centerLineContainer"><div className="centerLine"></div></div>
+                        <div className="leftWrapper">
+                            <div className="leftWrapperInner">
+                                <div className="loadingProgressText">{this.state.loadingPercentage + "%"}</div>
+                                <div className="centerLineContainer">
+                                    <div className="centerLine" style={this.state.centerLineStyle}></div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="loadingAnimationImg">
                             <div className="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                         </div>

@@ -72,6 +72,7 @@ class Xmjs extends React.Component {
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
+                        {/*<div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
@@ -86,8 +87,7 @@ class Xmjs extends React.Component {
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
                         <div className="swiper-slide"></div>
-                        <div className="swiper-slide"></div>
-                        <div className="swiper-slide"></div>
+                        <div className="swiper-slide"></div>*/}
                     </div>
                     <div className="swiper-pagination" id='body-left-pagination'></div>
 
