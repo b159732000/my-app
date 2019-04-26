@@ -1,11 +1,13 @@
 import React from 'react'
 import './ChildLoadingPage.css'
 
+
+
 class ChildLoadingPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            numberStopAt: 89,
+            numberStopAt: 93,
             percentageAddOneDuration: 20,
             loadingPercentage: 0,
             childLoadingIsDone: false
@@ -32,11 +34,12 @@ class ChildLoadingPage extends React.Component {
                         childLoadingIsDone: true
                     })
                 }
-            }.bind(this), 100);
+            }.bind(this), 10);
     }
 
     componentDidMount() {
         this.updateLoadingPercentage();
+        console.log(this.props);
     }
     // componentWillUpdate() {
     //     this.updateLoadingPercentage();

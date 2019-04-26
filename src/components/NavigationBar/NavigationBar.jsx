@@ -1,6 +1,7 @@
 import React from "react"
 import Loadable from 'react-loadable'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
+// import ImagesLoaded from 'react-images-loaded'
 // import routers from '../../router/index'
 
 // 本頁的CSS
@@ -27,9 +28,9 @@ const Loading = ({ isLoading, error }) => {
         // return <ChildLoadingPage></ChildLoadingPage>;
         return <div></div>
     } else if (error) {
-        return <ChildLoadingPage></ChildLoadingPage>;
+        // return <ChildLoadingPage></ChildLoadingPage>;
     } else {
-        return <ChildLoadingPage></ChildLoadingPage>;
+        // return <ChildLoadingPage></ChildLoadingPage>;
     }
 };
 
@@ -71,8 +72,9 @@ class NavigationBar extends React.Component {
             NavigationBarIsShowing: true,
             thisTimeShowLoadingPage: thisTimeNeedLoadingPage,
             showLoadingPageStyle: {
-                display: ''
-            }
+                display: '',
+            },
+            loadingPageList: ["1"]
         }
     }
 
@@ -96,26 +98,44 @@ class NavigationBar extends React.Component {
     askLoadableToChangeLoadingPageShowing() {
         if (thisTimeNeedLoadingPage) {
             this.setState({
-                showLoadingPageStyle: {display: ''}
+                showLoadingPageStyle: { display: '' },
+                loadingPageList: ["1"]
             })
         } else {
-            this.setState({
-                showLoadingPageStyle: {display: 'none'}
-            })
+            this.closeLoadingPage()
         }
     }
-    // 300毫秒後執行上述詢問及顯示程序
+    // 300毫秒後執行上述詢問及顯示程序，並在五秒後關閉Loading Page
     delayToCheckLoadingPageShowsThisTime() {
         setTimeout(() => {
             this.askLoadableToChangeLoadingPageShowing()
-        }, 300);
+            console.log("經詢問，這次需不需要顯示Loading Page的結果是 = " + thisTimeNeedLoadingPage)
+        }, 350);
+        setTimeout(() => {
+            this.closeLoadingPage()
+        }, 3000)
     }
 
     // 關閉Loading Page
     closeLoadingPage() {
-        this.setState({
-            showLoadingPageStyle: {display: 'none'}
-        })
+        setTimeout(() => {
+            this.setState({
+                showLoadingPageStyle: { display: 'none' },
+                loadingPageList: []
+            })
+        }, 1000);
+        console.log(this.state.showLoadingPageStyle)
+    }
+
+    // 每當按下導行列按鈕時
+    handlePageButtonOnClick() {
+        setThisTimeNeedLoadingPage(false);      //設定預設值，此頁不需要Loading Page
+        this.delayToCheckLoadingPageShowsThisTime();        //三百毫秒後詢問Loadable這次是否需要Loading Page，要就顯示反之亦然，並在3秒鐘後關閉Loading Page
+    }
+    // 第一次渲染時
+    componentWillMount() {
+        setThisTimeNeedLoadingPage(false);      //設定預設值，此頁不需要Loading Page
+        this.delayToCheckLoadingPageShowsThisTime();        //三百毫秒後詢問Loadable這次是否需要Loading Page，要就顯示反之亦然，並在3秒鐘後關閉Loading Page
     }
 
     render() {
@@ -133,15 +153,21 @@ class NavigationBar extends React.Component {
 
                     {/*預設不顯示*/}
                     {/*300毫秒後，詢問loadable我們這次需不需要顯示Loading Page，要的話就顯示*/}
-                    <div style={this.state.showLoadingPageStyle}><ChildLoadingPage ></ChildLoadingPage></div>
+                    {/*<div style={this.state.showLoadingPageStyle}><ChildLoadingPage state={this.state}></ChildLoadingPage></div>*/}
+                    {
+                        this.state.loadingPageList.map(function (item, index) {
+                            return <ChildLoadingPage key={index}></ChildLoadingPage>
+                        })
+                    }
 
                     <div id='NavigationBarContainer'>
                         <nav className="mainNav">
                             <ul className="mainNavUl">
-                                <li id="buttonToXmjs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
-                                <li id="buttonToQwzs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
-                                <li id="buttonToJghx" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react/jghx"><img src={require("../../images/jghx.png")} alt="" /></Link></li>
-                                <li id="buttonToJgzx" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
+                                <li id="buttonToXmjs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
+                                {/*<li id="buttonToXmjs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>*/}
+                                <li id="buttonToQwzs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
+                                <li id="buttonToJghx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/jghx"><img src={require("../../images/jghx.png")} alt="" /></Link></li>
+                                <li id="buttonToJgzx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
                             </ul>
                         </nav>
                     </div>
