@@ -12,6 +12,20 @@ import { Jgzx } from "../Jgzx"
 import { NavigationBar } from "../NavigationBar"
 
 class Main extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            thisTimeNeedLoadingPage: false,
+        }
+    }
+
+    changeThisTimeNeedLoadingPage(trueorfalse) {
+        this.setState({
+            thisTimeNeedLoadingPage: trueorfalse
+        }, console.log(this.state.thisTimeNeedLoadingPage))
+    }
+
+
     render() {
         return (
             <BrowserRouter id="BrowserRouterContainer">
@@ -21,7 +35,7 @@ class Main extends React.Component {
                     {/* <Xmjs title="項目介紹" /> */}
                     {/* <Jgzx title="景觀展示" /> */}
                     {/* <NavigationBar title="導行列" /> */}
-                    <NavigationBar title="導行列" />
+                    <NavigationBar title="導行列"/>
                 </div>
             </BrowserRouter>
         )
