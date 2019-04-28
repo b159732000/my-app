@@ -67,26 +67,26 @@ class FirstChoicePage extends React.Component {
                             <ul className="choiceList">
                                 <div className="column">
                                     {/*<li><Link to={{
-                                        pathname: '/james/cuihu-react/Xmjs'
+                                        pathname: '/james/cuihu-react-redux/Xmjs'
                                     }}>*/}
-                                    <li><Link to="/james/cuihu-react/Xmjs">
+                                    <li><Link to="/james/cuihu-react-redux/Xmjs">
                                         <Animated animationIn="rotateIn">
                                             <img id="topChoiceImg1" className="" src={require("../../images/topjs.png")} alt="" />
                                         </Animated>
                                     </Link></li>
-                                    <li><Link to="/james/cuihu-react/qwzs">
+                                    <li><Link to="/james/cuihu-react-redux/qwzs">
                                         <Animated animationIn="rotateIn">
                                             <img id="topChoiceImg2" className="" src={require("../../images/topqw.png")} alt="" />
                                         </Animated>
                                     </Link></li>
                                 </div>
                                 <div className="column">
-                                    <li><Link to="/james/cuihu-react/jghx">
+                                    <li><Link to="/james/cuihu-react-redux/jghx">
                                         <Animated animationIn="rotateIn">
                                             <img id="topChoiceImg3" className="animated invisible" src={require("../../images/tophx.png")} alt="" />
                                         </Animated>
                                     </Link></li>
-                                    <li><Link to="/james/cuihu-react/Jgzx">
+                                    <li><Link to="/james/cuihu-react-redux/Jgzx">
                                         <Animated animationIn="rotateIn">
                                             <img id="topChoiceImg4" className="animated invisible" src={require("../../images/topjg.png")} alt="" />
                                         </Animated>

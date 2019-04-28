@@ -148,12 +148,12 @@ class NavigationBar extends React.Component {
                 <Router id="BrowserRouterContainer">
                     {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
                     而後方有/about的話會渲染About*/}
-                    <Route path="/james/cuihu-react/" exact component={FirstChoicePage} />
-                    {/*<Route path="/james/cuihu-react/ChildLoadingPage" exact component={ChildLoadingPage} />*/}
-                    <Route path="/james/cuihu-react/Xmjs" component={Xmjs} />
-                    <Route path="/james/cuihu-react/Qwzs" component={Qwzs} />
-                    <Route path="/james/cuihu-react/Jghx" component={Jghx} />
-                    <Route path="/james/cuihu-react/Jgzx" component={Jgzx} />
+                    <Route path="/james/cuihu-react-redux/" exact component={FirstChoicePage} />
+                    {/*<Route path="/james/cuihu-react-redux/ChildLoadingPage" exact component={ChildLoadingPage} />*/}
+                    <Route path="/james/cuihu-react-redux/Xmjs" component={Xmjs} />
+                    <Route path="/james/cuihu-react-redux/Qwzs" component={Qwzs} />
+                    <Route path="/james/cuihu-react-redux/Jghx" component={Jghx} />
+                    <Route path="/james/cuihu-react-redux/Jgzx" component={Jgzx} />
 
                     {/*預設不顯示*/}
                     {/*300毫秒後，詢問loadable我們這次需不需要顯示Loading Page，要的話就顯示*/}
@@ -180,11 +180,11 @@ class NavigationBar extends React.Component {
                     <div id='NavigationBarContainer'>
                         <nav className="mainNav">
                             <ul className="mainNavUl">
-                                <li id="buttonToXmjs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
-                                {/*<li id="buttonToXmjs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>*/}
-                                <li id="buttonToQwzs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
-                                <li id="buttonToJghx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/jghx"><img src={require("../../images/jghx.png")} alt="" /></Link></li>
-                                <li id="buttonToJgzx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
+                                <li id="buttonToXmjs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
+                                {/*<li id="buttonToXmjs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react-redux/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>*/}
+                                <li id="buttonToQwzs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
+                                <li id="buttonToJghx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/jghx"><img src={require("../../images/jghx.png")} alt="" /></Link></li>
+                                <li id="buttonToJgzx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
                             </ul>
                         </nav>
                     </div>

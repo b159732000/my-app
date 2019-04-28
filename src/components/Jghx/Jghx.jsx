@@ -169,10 +169,10 @@ class Jghx extends React.Component {
                                 <a id="-1F" href="#" onClick={(e) => this.changeThreeDFloor("-1F", e)}
                                     className={"menu-item red animated slideInRight" + ((this.state.threeDFloor === "-1F") ? " choosen" : "")}>-1F</a>
                                 {/*<a href="#" className="menu-item blue"> <i className="fa fa-anchor"></i> </a>
-                                    <a href="#" className="menu-item green"> <i className="fa fa-coffee"></i> </a>
-                                    <a href="#" className="menu-item red"> <i className="fa fa-heart"></i> </a>*/}
+                                <a href="#" className="menu-item green"> <i className="fa fa-coffee"></i> </a>
+                            <a href="#" className="menu-item red"> <i className="fa fa-heart"></i> </a>*/}
                             </div>
-                            <Iframe id="threeD" src={"http://hvr.isunupcg.com/james/cuihu-optimize/" + this.state.threeDSrc + ".html"} frameborder="0"></Iframe>
+                            <Iframe id="threeD" src={"http://hvr.isunupcg.com/james/cuihu-optimize/" + this.state.threeDSrc + ".html"} frameBorder="0"></Iframe>
                         </div>
 
                         {/** 小型地圖 */}
