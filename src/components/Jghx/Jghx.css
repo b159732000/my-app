@@ -66,9 +66,9 @@
 
 #JghxContainer .showRoom Iframe {
     border: 1px solid #000;
-    width: 100%;
+    width: 90%;
     height: 100%;
-    z-index: -100;
+    /* z-index: -100; */
     position: relative;
 }
 
@@ -89,6 +89,7 @@
     /* 內容水平平靠右對齊 */
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
+
 }
 
 #JghxContainer .showRoom .combine img {
@@ -307,6 +308,9 @@
     bottom: 6vh;
 
     z-index: 3;
+
+    overflow: visible !important;
+
 
     display: flex;
     /* 改為垂直排列 */

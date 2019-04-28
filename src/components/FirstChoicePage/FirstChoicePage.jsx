@@ -69,28 +69,28 @@ class FirstChoicePage extends React.Component {
                                     {/*<li><Link to={{
                                         pathname: '/james/cuihu-react-redux/Xmjs'
                                     }}>*/}
-                                    <li><Link to="/james/cuihu-react-redux/Xmjs">
-                                        <Animated animationIn="rotateIn">
+                                    <Animated animationIn="flipInX" animationInDelay="100" animationInDuration="1500">
+                                        <li><Link to="/james/cuihu-react-redux/Xmjs">
                                             <img id="topChoiceImg1" className="" src={require("../../images/topjs.png")} alt="" />
-                                        </Animated>
-                                    </Link></li>
-                                    <li><Link to="/james/cuihu-react-redux/qwzs">
-                                        <Animated animationIn="rotateIn">
+                                        </Link></li>
+                                    </Animated>
+                                    <Animated animationIn="flipInX" animationInDelay="300" animationInDuration="1500">
+                                        <li><Link to="/james/cuihu-react-redux/qwzs">
                                             <img id="topChoiceImg2" className="" src={require("../../images/topqw.png")} alt="" />
-                                        </Animated>
-                                    </Link></li>
+                                        </Link></li>
+                                    </Animated>
                                 </div>
                                 <div className="column">
-                                    <li><Link to="/james/cuihu-react-redux/jghx">
-                                        <Animated animationIn="rotateIn">
+                                    <Animated animationIn="flipInX" animationInDelay="500" animationInDuration="1500">
+                                        <li><Link to="/james/cuihu-react-redux/jghx">
                                             <img id="topChoiceImg3" className="animated invisible" src={require("../../images/tophx.png")} alt="" />
-                                        </Animated>
-                                    </Link></li>
-                                    <li><Link to="/james/cuihu-react-redux/Jgzx">
-                                        <Animated animationIn="rotateIn">
+                                        </Link></li>
+                                    </Animated>
+                                    <Animated animationIn="flipInX" animationInDelay="700" animationInDuration="1500">
+                                        <li><Link to="/james/cuihu-react-redux/Jgzx">
                                             <img id="topChoiceImg4" className="animated invisible" src={require("../../images/topjg.png")} alt="" />
-                                        </Animated>
-                                    </Link></li>
+                                        </Link></li>
+                                    </Animated>
                                 </div>
                             </ul>
                         </div>
