@@ -221,7 +221,7 @@ class Jghx extends React.Component {
                         </div>
                     </div>
 
-                    <iframe id="panomera" src={"http://hvr.isunupcg.com/james/cuihu-optimize/qj/" + this.state.panoramaCode + "/pano/index.html"} frameborder="0" className={(this.state.panoramaShowing) ? "" : "noDisplay"}></iframe>
+                    <iframe id="panomera" src={"http://hvr.isunupcg.com/james/cuihu-optimize/qj/" + this.state.panoramaCode + "/pano/index.html"} frameBorder="0" className={(this.state.panoramaShowing) ? "" : "noDisplay"}></iframe>
 
                     {/*全景和返回鍵*/}
                     <div id="getBack" className={"getBack" + ((this.state.panoramaShowing) ? "" : " noDisplay")} onClick={(e) => this.closePanorama()}>

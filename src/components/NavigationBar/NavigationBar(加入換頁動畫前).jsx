@@ -1,7 +1,7 @@
 import React from "react"
 import Loadable from 'react-loadable'
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom"
-import { TransitionGroup, CSSTransition, CSSTransitionGroup } from "react-transition-group"
+import { TransitionGroup, CSSTransition } from "react-transition-group"
 // import ImagesLoaded from 'react-images-loaded'
 // import routers from '../../router/index'
 
@@ -145,56 +145,57 @@ class NavigationBar extends React.Component {
     render() {
         return (
             <div>
-                <Router>
-                <Route path="/james/cuihu-react-redux/" exact component={FirstChoicePage} />
-                    <Route render={({ location }) => (
-                        /*路徑指定/代表根目錄，所以預設就會渲染Home組件，
-                        而後方有/about的話會渲染About*/
+                <Router id="BrowserRouterContainer">
+                        {/*路徑指定/代表根目錄，所以預設就會渲染Home組件，
+                    而後方有/about的話會渲染About*/}
+                        <Route path="/james/cuihu-react-redux/" exact component={FirstChoicePage} />
+                        {/*<Route path="/james/cuihu-react-redux/ChildLoadingPage" exact component={ChildLoadingPage} />*/}
 
-                        /*<Route path="/james/cuihu-react-redux/ChildLoadingPage" exact component={ChildLoadingPage} />*/
-                        <TransitionGroup>
+                        <Route path="/james/cuihu-react-redux/Xmjs" component={Xmjs} />
+                        <Route path="/james/cuihu-react-redux/Qwzs" component={Qwzs} />
+                        <Route path="/james/cuihu-react-redux/Jghx" component={Jghx} />
+                        <Route path="/james/cuihu-react-redux/Jgzx" component={Jgzx} />
+                        {/*預設不顯示*/}
+                        {/*300毫秒後，詢問loadable我們這次需不需要顯示Loading Page，要的話就顯示*/}
+                        {/*<div style={this.state.showLoadingPageStyle}><ChildLoadingPage state={this.state}></ChildLoadingPage></div>*/}
+                        {/*
+                        this.state.loadingPageList.map(function (item, index) {
+                            return <ChildLoadingPage key={index}></ChildLoadingPage>
+                        })
+                    */}
 
-                            <CSSTransition
-                                key={location.key}
-                                in={true}
-                                timeout={{ enter: 300, exit: 300 }}
-                                classNames="fade">
-                                <section className="route-section">
-                                    <Switch key={location.key} location={location}>
-                                        <Route path="/james/cuihu-react-redux/Xmjs" component={Xmjs} />
-                                        <Route path="/james/cuihu-react-redux/Qwzs" component={Qwzs} />
-                                        <Route path="/james/cuihu-react-redux/Jghx" component={Jghx} />
-                                        <Route path="/james/cuihu-react-redux/Jgzx" component={Jgzx} />
-                                    </Switch>
-                                    <div></div>
-                                </section>
-                            </CSSTransition>
 
-                        </TransitionGroup>
-                    )} />
+                        {/* Child Loading Page Transition */}
+                        <CSSTransition
+                            in={this.state.showLoadingPage}
+                            classNames="child-loading-page-transition"
+                            timeout={400}
+                            unmountOnExit
+                            appear
+                        >
+                            <div><ChildLoadingPage></ChildLoadingPage></div>
+                        </CSSTransition>
 
-                    <CSSTransition
-                        in={this.state.showLoadingPage}
-                        classNames="child-loading-page-transition"
-                        timeout={400}
-                        unmountOnExit
-                        appear
-                    >
-                        <div><ChildLoadingPage></ChildLoadingPage></div>
-                    </CSSTransition>
 
-                    <div id='NavigationBarContainer'>
-                        <nav className="mainNav">
-                            <ul className="mainNavUl">
-                                <li id="buttonToXmjs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
-                                {/*<li id="buttonToXmjs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react-redux/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>*/}
-                                <li id="buttonToQwzs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
-                                <li id="buttonToJghx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/jghx"><img src={require("../../images/jghx.png")} alt="" /></Link></li>
-                                <li id="buttonToJgzx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
-                            </ul>
-                        </nav>
-                    </div>
+                        <div id='NavigationBarContainer'>
+                            <nav className="mainNav">
+                                <ul className="mainNavUl">
+                                    <li id="buttonToXmjs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>
+                                    {/*<li id="buttonToXmjs" onClick={() => setThisTimeNeedLoadingPage(false)}><Link to="/james/cuihu-react-redux/Xmjs"><img src={require("../../images/xmjs.png")} alt="" /></Link></li>*/}
+                                    <li id="buttonToQwzs" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Qwzs"><img src={require("../../images/qwzs.png")} alt="" /></Link></li>
+                                    <li id="buttonToJghx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/jghx"><img src={require("../../images/jghx.png")} alt="" /></Link></li>
+                                    <li id="buttonToJgzx" onClick={() => this.handlePageButtonOnClick()}><Link to="/james/cuihu-react-redux/Jgzx"><img src={require("../../images/jgzs.png")} alt="" /></Link></li>
+                                </ul>
+                            </nav>
+                        </div>
                 </Router>
+
+                {/*{
+                    setTimeout(() => ((this.state.thisTimeShowLoadingPage == true) ? (<ChildLoadingPage></ChildLoadingPage>) : null), 300)}
+                {
+                    setTimeout(() => console.log(this.state.thisTimeShowLoadingPage), 300)
+                }*/}
+
             </div>
 
         )

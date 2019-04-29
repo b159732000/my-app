@@ -5,23 +5,30 @@ import './index.css';
 import { Main } from './components/Main';
 import * as serviceWorker from './serviceWorker';
 
-// redux
+// // redux
 // import { Provider } from 'react-redux'
 // import { createStore } from 'redux'
-// import rootReducer from './reducers'
+// import rootReducer from './reducers/index.jsx'
 
-// 定義Redux Store
+
+// // 定義Redux Store
 // const store = createStore(rootReducer)
+// console.log(store);
+// store.dispatch({ type: "INCREMENT" })
+// console.log(store);
+// store.dispatch({ type: "DECREMENT" })
+// console.log(store);
+// store.dispatch({ type: "RESET" })
+// console.log(store);
+
+
 
 ReactDOM.render(
-    
     /* Redux版本 */
-    /* <Provider store={store}>
-    <Main />
-    </Provider>, */
+    <Main />,
 
     /* 無Redux版本 */
-    <Main />,
+    // <Main />,
 
     document.getElementById('root'));
 
