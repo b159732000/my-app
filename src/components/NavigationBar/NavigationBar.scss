@@ -1,0 +1,33 @@
+$primaryColor: rgb(85, 136, 218);
+$fontSize: 5vh;
+
+/* 底部跑馬燈 */
+#companyLogo {
+//   border: 1px solid #000;
+  position: fixed;
+  width: auto;
+  top: 91vh-2vh-$fontSize;
+  font-size: $fontSize;
+  font-weight: 700;
+  transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  
+  -webkit-text-stroke: 1px $primaryColor;
+  -webkit-text-fill-color: $primaryColor;
+  
+  .fill {
+      -webkit-text-fill-color: $primaryColor;
+  }
+
+  .unFill {
+    -webkit-text-fill-color: rgba($color: #000000, $alpha: 0);
+  }
+
+  .lake {
+  }
+
+  .wood {
+  }
+
+  .hills {
+  }
+}

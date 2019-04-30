@@ -7,6 +7,7 @@ import { TransitionGroup, CSSTransition, CSSTransitionGroup } from "react-transi
 
 // 本頁的CSS
 import "./NavigationBar.css"
+import "./NavigationBar.scss"
 import ChildLoadingPage from '../ChildLoadingPage/ChildLoadingPage.jsx'
 
 // 我自訂的所有分頁 (components)
@@ -76,7 +77,12 @@ class NavigationBar extends React.Component {
                 display: '',
             },
             loadingPageList: ["1"],
-            showLoadingPage: false
+            showLoadingPage: false,
+            companyLogoTextListClassName: [
+                {key:"lake", classNameList: ["lake ", "unfill "]},
+                {key:"wood", classNameList: ["wood ", "fill "]},
+                {key:"hills", classNameList: ["hills ", "fill "]},
+            ]
         }
     }
 
@@ -142,11 +148,29 @@ class NavigationBar extends React.Component {
         this.delayToCheckLoadingPageShowsThisTime();        //三百毫秒後詢問Loadable這次是否需要Loading Page，要就顯示反之亦然，並在3秒鐘後關閉Loading Page
     }
 
+    // Company Logo 跑馬燈填充與否
+    handelCompanyLogoClick(event) {
+
+        // 對Company Logo每一個詞都做動作
+        for ( var i = 0 ; i < this.state.companyLogoTextListClassName.length ; i += 1 ) {
+            
+            if ( this.state.companyLogoTextListClassName[i].classNameList.indexOf("fill") >= 0 ) {   //如果這一個詞的ClassName List有包含"fill"
+            console.log("item " + i + " 包含 fill");
+            }
+        }
+
+        this.setState({
+            // companyLogoTextListClassName[0]: ""
+        })
+
+        // console.log(event.target.className);
+    }
+
     render() {
         return (
             <div>
                 <Router>
-                <Route path="/james/cuihu-react-redux/" exact component={FirstChoicePage} />
+                    <Route path="/james/cuihu-react-redux/" exact component={FirstChoicePage} />
                     <Route render={({ location }) => (
                         /*路徑指定/代表根目錄，所以預設就會渲染Home組件，
                         而後方有/about的話會渲染About*/
@@ -172,16 +196,22 @@ class NavigationBar extends React.Component {
 
                         </TransitionGroup>
                     )} />
+                    
+                        <CSSTransition
+                            in={this.state.showLoadingPage}
+                            classNames="child-loading-page-transition"
+                            timeout={400}
+                            unmountOnExit
+                            appear
+                        >
+                            <div><ChildLoadingPage></ChildLoadingPage></div>
+                        </CSSTransition>
 
-                    <CSSTransition
-                        in={this.state.showLoadingPage}
-                        classNames="child-loading-page-transition"
-                        timeout={400}
-                        unmountOnExit
-                        appear
-                    >
-                        <div><ChildLoadingPage></ChildLoadingPage></div>
-                    </CSSTransition>
+                        {/*<div id="companyLogo" onClick={(e) => this.handelCompanyLogoClick(e)}>
+                            <span className={this.state.companyLogoTextListClassName[0]}>LAKE&nbsp;</span>
+                            <span className={this.state.companyLogoTextListClassName[1]}>WOOD&nbsp;</span>
+                            <span className={this.state.companyLogoTextListClassName[2]}>HILLS</span>
+                    </div>*/}
 
                     <div id='NavigationBarContainer'>
                         <nav className="mainNav">
@@ -195,7 +225,7 @@ class NavigationBar extends React.Component {
                         </nav>
                     </div>
                 </Router>
-            </div>
+            </div >
 
         )
     }
